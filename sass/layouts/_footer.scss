@@ -1,0 +1,28 @@
+footer {
+    margin: 50;
+    background-color: #353535;
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 25px;
+    height: 195px;
+
+    .logo > img {
+        width: 100px;
+        fill: red;
+    }
+
+    .footer-menu {
+        list-style: none;
+        margin-bottom: 6px;
+    }
+
+    // fixme: A revoir (prob de taille et de couleur)
+    li:nth-child(1) {
+        list-style-image: url('../../icones/utensils-solid.svg');
+    }
+
+    li:nth-child(2) {
+        list-style-image: url('../../icones/hands-helping-solid.svg');
+    }
+}

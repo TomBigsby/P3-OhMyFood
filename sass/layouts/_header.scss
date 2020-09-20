@@ -1,0 +1,12 @@
+header {
+    display: flex;
+    justify-items: center;
+    height: 62px;
+    margin: auto;
+    @include shadow;
+}
+
+header>img {
+    margin: auto;
+    width: 166px;
+}
