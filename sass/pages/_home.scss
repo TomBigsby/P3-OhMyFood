@@ -1,0 +1,173 @@
+.localisation {
+    font-size: 1rem;
+    color: $colour-text1;
+    height: 50px;
+    background-color: $colour-background3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+        margin-right: 10px;
+    }
+}
+
+// bloc "Book the menu you like"
+.container {
+    background-color: $colour-background2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > div {
+        text-align: center;
+        font-weight: 300;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+}
+
+// bloc "How it work"
+.hiw {
+    background-color: $colour-background1;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .choice {
+        width: 336px;
+        height: 74px;
+        background: $colour-background2;
+        border-radius: 20px;
+        margin-bottom: 24px;
+        font-weight: 500;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        @include shadow;
+
+        i {
+            padding: 0 18px 0 30px;
+
+        }
+
+        //   taille icone tel mobile + grande
+        &:nth-child(1) i {
+            font-size: 1.2rem;
+        }
+
+
+        //  NOTE: Créer mixin pour circle avec redimenssionement (ex : placement num = largeur circle /2)
+
+        .circle-num {
+            width: 24px;
+            height: 24px;
+            position: relative;
+
+
+            .circle {
+                width: 24px;
+                height: 24px;
+                background-color: $colour-primary;
+                z-index: 4;
+                position: absolute;
+                border-radius: 30px;
+                left: -12px;
+            }
+
+            .number {
+                color: $colour-background1;
+                z-index: 5;
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                text-align: center;
+                font-weight: 400;
+                font-size: 0.85rem;
+                left: -12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.restaurants {
+    background-color: $colour-background2;
+    padding: 1px 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+
+    //    FIXME: je n'arrive pas à isoler le h2 pour qui'l reste à gauche
+    &:not(h2) {
+        align-items: center;
+    }
+
+    .card {
+        //        height: 252px;
+        width: 336px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        @include shadow;
+        overflow: hidden;
+        border-radius: 15px;
+        background-color: $colour-background1;
+        position: relative;
+
+        &__photo {
+            position: relative;
+            overflow: hidden;
+            height: 180px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-desc {
+            margin: 15px;
+            position: relative;
+
+            h3 {
+                margin: 0;
+            }
+
+            &__name {
+                padding-bottom: 5px;
+            }
+
+            &__favorite {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-size: 1.5rem;
+                height: 100%;
+                width: 20%;
+            }
+        }
+
+        &__label {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            background-color: $colour-tertiary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 15px;
+            color: darken($colour-tertiary, 40%);
+            top: 15px;
+            right: 15px;
+        }
+    }
+}

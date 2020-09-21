@@ -1,0 +1,131 @@
+.bg-image img {
+    width: 100%;
+    margin-bottom: -50px;
+}
+
+.bt-back {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    margin: 12px;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid $colour-background3;
+    border-radius: 50%;
+
+        &:hover {
+            border: 1px solid darken($colour-background3, 10%);
+        }
+}
+
+.menus {
+    background-color: $colour-background2;
+    border-radius: 42px 42px 0px 0px;
+    padding: 35px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .top-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        .favorite {
+            font-size: 1.5rem;
+            color: $colour-text1;
+            padding-right: 20px;
+            position: relative;
+            top: 6px;
+        }
+    }
+
+    .choix-plat {
+        margin-bottom: 32px;
+
+        .titre {
+            color: $colour-text1;
+            font-size: 1rem;
+            font-weight: 200;
+        }
+
+        .filet {
+            height: 3px;
+            width: 40px;
+            background-color: $colour-tertiary;
+            margin: 5px 0 12px 0;
+        }
+
+        .plat {
+            width: calc(100%-40px);
+            min-width: 350px;
+            background-color: $colour-background1;
+            border-radius: 15px;
+            padding: 12px;
+            padding-right: 25px;
+            position: relative;
+            margin-bottom: 12px;
+            @include shadow;
+
+            &__nom {
+                font-size: 1.125rem;
+                font-weight: 500;
+                line-height: 1.8rem;
+            }
+
+            &__ligne2 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            &__desc {
+                font-size: 1rem;
+                font-weight: 300;
+            }
+
+            &__prix {
+                font-size: 1rem;
+                font-weight: bold;
+            }
+
+            &__valid {
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                // DEBUG: transparence avant anim
+                opacity: 0.5;
+
+                &__bg {
+                    width: 60px;
+                    height: 100%;
+                    background: $colour-tertiary;
+                    border-radius: 0px 15px 15px 0px;
+                }
+
+                &__icon {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: 0;
+                    color: $colour-background1;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 50px 0;
+    }
+}

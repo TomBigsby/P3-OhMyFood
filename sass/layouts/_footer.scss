@@ -1,28 +1,24 @@
 footer {
-    margin: 50;
     background-color: #353535;
-    color: white;
+    color: $colour-background1;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 400;
     padding: 25px;
-    height: 195px;
+    padding-bottom: 35px;
 
-    .logo > img {
+
+    img {
         width: 100px;
-        fill: red;
+        //  FIXME: prob couleur logo SVG
+        fill: $colour-background1;
+        padding-bottom: 10px;
     }
 
     .footer-menu {
-        list-style: none;
-        margin-bottom: 6px;
+        line-height: 27px;
     }
 
-    // fixme: A revoir (prob de taille et de couleur)
-    li:nth-child(1) {
-        list-style-image: url('../../icones/utensils-solid.svg');
-    }
-
-    li:nth-child(2) {
-        list-style-image: url('../../icones/hands-helping-solid.svg');
+    i {
+        margin-right: 10px;
     }
 }

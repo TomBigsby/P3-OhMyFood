@@ -1,5 +1,28 @@
 button {
     font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-size: 2.75rem;
+    font-weight: 400;
+    font-size: 1rem;
+    border: none;
+}
+
+.button1 {
+    width: 220px;
+    height: 50px;
+    color: $colour-text1;
+    border-radius: 30px;
+    background: linear-gradient(175deg, $colour-secondary 10%, $colour-primary 95%);
+    color: $colour-background1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include shadow-button;
+
+    &:hover {
+        @include shadow-button--hover
+    }
+
+    &:active {
+        @include shadow-button--active
+    }
 }

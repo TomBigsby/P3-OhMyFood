@@ -1,12 +1,16 @@
-header {
+.container-header {
+    width: 100%;
+    height: 62px;
     display: flex;
     justify-items: center;
-    height: 62px;
-    margin: auto;
-    @include shadow;
-}
+    background-color: $colour-background1;
+    position: relative;
 
-header>img {
-    margin: auto;
-    width: 166px;
+    //    FIXME : l'ombre ne s'affiche pas à cause du bloc d'en dessous (les z-index ne corrigent pas le problème)
+    @include shadow;
+
+    .logo-top {
+        width: 166px;
+        margin: auto;
+    }
 }
