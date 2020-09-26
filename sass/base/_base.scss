@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900');
+
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
 body {
     margin: auto;
     font-family: 'Roboto', sans-serif;
     color: $colour-text1;
-    // root font-size
+    //  font-size par défaut
     font-size: 16px;
 }
 
@@ -31,15 +35,24 @@ h4 {
     text-align: left;
 }
 
-a,
-a:visited {
-    text-decoration: none;
-    color: $colour-text1;
+a {
+
+    &:visited,
+    &:link,
+    &:active {
+        text-decoration: none;
+        color: $colour-text1;
+    }
 }
 
-footer a:visited {
-    text-decoration: none;
-    color: $colour-background1;
+footer a {
+
+    &:visited,
+    &:link,
+    &:active {
+        text-decoration: none;
+        color: $colour-background1;
+    }
 }
 
 footer a:hover {

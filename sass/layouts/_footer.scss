@@ -2,15 +2,14 @@ footer {
     background-color: #353535;
     color: $colour-background1;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 300;
     padding: 25px;
     padding-bottom: 35px;
 
 
-    img {
+    .logo img {
         width: 100px;
-        //  FIXME: prob couleur logo SVG
-        fill: $colour-background1;
+        height: 20px;
         padding-bottom: 10px;
     }
 

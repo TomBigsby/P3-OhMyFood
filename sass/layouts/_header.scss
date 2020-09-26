@@ -6,7 +6,6 @@
     background-color: $colour-background1;
     position: relative;
 
-    //    FIXME : l'ombre ne s'affiche pas à cause du bloc d'en dessous (les z-index ne corrigent pas le problème)
     @include shadow;
 
     .logo-top {

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 body {
   margin: auto;
   font-family: 'Roboto', sans-serif;
@@ -30,10 +32,18 @@ h4 {
   text-align: left;
 }
 
-a,
-a:visited {
+a:visited, a:link, a:active {
   text-decoration: none;
   color: #000;
+}
+
+footer a:visited, footer a:link, footer a:active {
+  text-decoration: none;
+  color: #FFF;
+}
+
+footer a:hover {
+  color: #99E2D0;
 }
 
 button {
@@ -60,6 +70,160 @@ button {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+  -webkit-transition: -webkit-box-shadow 150ms linear, -webkit-transform 150ms linear;
+  transition: -webkit-box-shadow 150ms linear, -webkit-transform 150ms linear;
+  transition: box-shadow 150ms linear, transform 150ms linear;
+  transition: box-shadow 150ms linear, transform 150ms linear, -webkit-box-shadow 150ms linear, -webkit-transform 150ms linear;
+}
+
+.button1:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  -webkit-box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+.button1:active {
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.card-desc__favorite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.coeur2 {
+  color: #000;
+}
+
+.coeur2:hover {
+  -webkit-animation: grow-plus 250ms;
+          animation: grow-plus 250ms;
+  -webkit-transition: -webkit-transform 250ms ease;
+  transition: -webkit-transform 250ms ease;
+  transition: transform 250ms ease;
+  transition: transform 250ms ease, -webkit-transform 250ms ease;
+}
+
+.coeur2:hover + .coeur1 {
+  -webkit-animation: grow 250ms;
+          animation: grow 250ms;
+  -webkit-transition: -webkit-transform 250ms ease;
+  transition: -webkit-transform 250ms ease;
+  transition: transform 250ms ease;
+  transition: transform 250ms ease, -webkit-transform 250ms ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.coeur1 {
+  background: -webkit-linear-gradient(175deg, #FF79DA 10%, #9356DC 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.coeur1 {
+  font-size: 24px;
+  z-index: 1;
+  position: absolute;
+}
+
+.coeur2 {
+  font-size: 24px;
+  z-index: 2;
+  position: absolute;
+}
+
+.coeur3 {
+  font-size: 24px;
+  z-index: 3;
+  position: absolute;
+}
+
+@-webkit-keyframes grow {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  90% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  90% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes grow-plus {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  90% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+@keyframes grow-plus {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  90% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .container-header {
@@ -84,14 +248,14 @@ footer {
   background-color: #353535;
   color: #FFF;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   padding: 25px;
   padding-bottom: 35px;
 }
 
-footer img {
+footer .logo img {
   width: 100px;
-  fill: #FFF;
+  height: 20px;
   padding-bottom: 10px;
 }
 
@@ -141,7 +305,7 @@ footer i {
 .container > div {
   text-align: center;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-bottom: 30px;
 }
 
@@ -196,6 +360,7 @@ footer i {
   width: 24px;
   height: 24px;
   position: relative;
+  left: -12px;
 }
 
 .hiw .choice .circle-num .circle {
@@ -204,8 +369,7 @@ footer i {
   background-color: #9356DC;
   z-index: 4;
   position: absolute;
-  border-radius: 30px;
-  left: -12px;
+  border-radius: 50%;
 }
 
 .hiw .choice .circle-num .number {
@@ -214,10 +378,8 @@ footer i {
   position: absolute;
   width: 24px;
   height: 24px;
-  text-align: center;
   font-weight: 400;
   font-size: 0.85rem;
-  left: -12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,21 +403,13 @@ footer i {
           flex-direction: column;
 }
 
-.restaurants:not(h2) {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .restaurants .card {
   width: 336px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
   margin-bottom: 30px;
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
@@ -304,6 +458,7 @@ footer i {
   font-size: 1.5rem;
   height: 100%;
   width: 20%;
+  border: 1px solid red;
 }
 
 .restaurants .card__label {
@@ -321,10 +476,14 @@ footer i {
       -ms-flex-pack: center;
           justify-content: center;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 1rem;
   color: #278870;
   top: 15px;
   right: 15px;
+}
+
+.bg-image {
+  max-height: 270px;
 }
 
 .bg-image img {
@@ -352,10 +511,10 @@ footer i {
 }
 
 .bt-back:hover {
-  border: 1px solid #d1d1d1;
+  border: 1px solid #e7e7e7;
 }
 
-.bt-back .menus {
+.menus {
   background-color: #F6F6F6;
   border-radius: 42px 42px 0px 0px;
   padding: 35px 20px;
@@ -369,7 +528,7 @@ footer i {
           flex-direction: column;
 }
 
-.bt-back .menus .top-menu {
+.menus .top-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -383,32 +542,35 @@ footer i {
   margin-bottom: 30px;
 }
 
-.bt-back .menus .top-menu .favorite {
+.menus .top-menu .favorite {
   font-size: 1.5rem;
   color: #000;
   padding-right: 20px;
-  position: relative;
+  position: absolute;
   top: 6px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid red;
 }
 
-.bt-back .menus .choix-plat {
+.menus .choix-plat {
   margin-bottom: 32px;
 }
 
-.bt-back .menus .choix-plat .titre {
+.menus .choix-plat .titre {
   color: #000;
   font-size: 1rem;
   font-weight: 200;
 }
 
-.bt-back .menus .choix-plat .filet {
+.menus .choix-plat .filet {
   height: 3px;
   width: 40px;
   background-color: #99E2D0;
   margin: 5px 0 12px 0;
 }
 
-.bt-back .menus .choix-plat .plat {
+.menus .choix-plat .plat {
   width: calc(100%-40px);
   min-width: 350px;
   background-color: #FFF;
@@ -421,13 +583,13 @@ footer i {
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
-.bt-back .menus .choix-plat .plat__nom {
+.menus .choix-plat .plat__nom {
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.8rem;
 }
 
-.bt-back .menus .choix-plat .plat__ligne2 {
+.menus .choix-plat .plat__ligne2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -440,17 +602,17 @@ footer i {
           justify-content: space-between;
 }
 
-.bt-back .menus .choix-plat .plat__desc {
+.menus .choix-plat .plat__desc {
   font-size: 1rem;
   font-weight: 300;
 }
 
-.bt-back .menus .choix-plat .plat__prix {
+.menus .choix-plat .plat__prix {
   font-size: 1rem;
   font-weight: bold;
 }
 
-.bt-back .menus .choix-plat .plat__valid {
+.menus .choix-plat .plat__valid {
   height: 100%;
   position: absolute;
   top: 0;
@@ -458,14 +620,14 @@ footer i {
   opacity: 0.5;
 }
 
-.bt-back .menus .choix-plat .plat__valid__bg {
+.menus .choix-plat .plat__valid__bg {
   width: 60px;
   height: 100%;
   background: #99E2D0;
   border-radius: 0px 15px 15px 0px;
 }
 
-.bt-back .menus .choix-plat .plat__valid__icon {
+.menus .choix-plat .plat__valid__icon {
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -483,7 +645,7 @@ footer i {
   font-size: 1.3rem;
 }
 
-.bt-back .menus .button-container {
+.menus .button-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

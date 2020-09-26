@@ -1,18 +1,20 @@
-/* line 1, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/* line 5, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
 body {
   margin: auto;
   font-family: 'Roboto', sans-serif;
   color: #000;
   font-size: 16px; }
 
-/* line 9, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
+/* line 13, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
 h1 {
   font-weight: 600;
   font-size: 1.5rem;
   margin: 0 0 40px 0;
   text-align: center; }
 
-/* line 16, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
+/* line 20, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
 h2 {
   font-family: 'Roboto', sans-serif;
   color: #000;
@@ -21,7 +23,7 @@ h2 {
   margin: 50px 0 30px 30px;
   text-align: left; }
 
-/* line 25, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
+/* line 29, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
 h4 {
   font-family: 'Shrikhand', cursive;
   color: #000;
@@ -30,18 +32,17 @@ h4 {
   margin: 0;
   text-align: left; }
 
-/* line 34, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
-a,
-a:visited {
+/* line 40, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
+a:visited, a:link, a:active {
   text-decoration: none;
   color: #000; }
 
-/* line 40, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
-footer a:visited {
+/* line 50, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
+footer a:visited, footer a:link, footer a:active {
   text-decoration: none;
   color: #FFF; }
 
-/* line 45, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
+/* line 58, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/base/_base.scss */
 footer a:hover {
   color: #99E2D0; }
 
@@ -75,6 +76,69 @@ button {
     transform: scale(0.97);
     box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3); }
 
+/* line 1, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_coeur-fav.scss */
+.card-desc__favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+/* line 7, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_coeur-fav.scss */
+.coeur2 {
+  color: #000; }
+  /* line 10, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_coeur-fav.scss */
+  .coeur2:hover {
+    animation: grow-plus 250ms;
+    transition: transform 250ms ease; }
+  /* line 15, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_coeur-fav.scss */
+  .coeur2:hover + .coeur1 {
+    animation: grow 250ms;
+    transition: transform 250ms ease;
+    animation-fill-mode: forwards; }
+
+/* line 22, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_coeur-fav.scss */
+.coeur1 {
+  background: -webkit-linear-gradient(175deg, #FF79DA 10%, #9356DC 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0); }
+
+/* line 30, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_coeur-fav.scss */
+.coeur1 {
+  font-size: 24px;
+  z-index: 1;
+  position: absolute; }
+
+/* line 30, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_coeur-fav.scss */
+.coeur2 {
+  font-size: 24px;
+  z-index: 2;
+  position: absolute; }
+
+/* line 30, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_coeur-fav.scss */
+.coeur3 {
+  font-size: 24px;
+  z-index: 3;
+  position: absolute; }
+
+@keyframes grow {
+  0% {
+    transform: scale(0); }
+  90% {
+    transform: scale(1.3); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes grow-plus {
+  0% {
+    transform: scale(1); }
+  30% {
+    transform: scale(1); }
+  90% {
+    transform: scale(1.3); }
+  100% {
+    transform: scale(1); }
+  transform: scale(1); }
+
 /* line 1, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/layouts/_header.scss */
 .container-header {
   width: 100%;
@@ -86,7 +150,7 @@ button {
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15); }
-  /* line 12, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/layouts/_header.scss */
+  /* line 11, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/layouts/_header.scss */
   .container-header .logo-top {
     width: 166px;
     margin: auto; }
@@ -96,18 +160,18 @@ footer {
   background-color: #353535;
   color: #FFF;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   padding: 25px;
   padding-bottom: 35px; }
   /* line 10, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/layouts/_footer.scss */
-  footer img {
+  footer .logo img {
     width: 100px;
-    fill: #FFF;
+    height: 20px;
     padding-bottom: 10px; }
-  /* line 17, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/layouts/_footer.scss */
+  /* line 16, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/layouts/_footer.scss */
   footer .footer-menu {
     line-height: 27px; }
-  /* line 21, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/layouts/_footer.scss */
+  /* line 20, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/layouts/_footer.scss */
   footer i {
     margin-right: 10px; }
 
@@ -135,7 +199,7 @@ footer {
   .container > div {
     text-align: center;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 1.125rem;
     margin-bottom: 30px; }
 
 /* line 32, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
@@ -166,49 +230,44 @@ footer {
     /* line 58, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
     .hiw .choice:nth-child(1) i {
       font-size: 1.2rem; }
-    /* line 65, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+    /* line 63, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
     .hiw .choice .circle-num {
       width: 24px;
       height: 24px;
-      position: relative; }
-      /* line 71, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+      position: relative;
+      left: -12px; }
+      /* line 70, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
       .hiw .choice .circle-num .circle {
         width: 24px;
         height: 24px;
         background-color: #9356DC;
         z-index: 4;
         position: absolute;
-        border-radius: 30px;
-        left: -12px; }
-      /* line 81, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+        border-radius: 50%; }
+      /* line 79, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
       .hiw .choice .circle-num .number {
         color: #FFF;
         z-index: 5;
         position: absolute;
         width: 24px;
         height: 24px;
-        text-align: center;
         font-weight: 400;
         font-size: 0.85rem;
-        left: -12px;
         display: flex;
         justify-content: center;
         align-items: center; }
 
-/* line 99, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+/* line 96, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
 .restaurants {
   background-color: #F6F6F6;
   padding: 1px 20px 40px 20px;
   display: flex;
   flex-direction: column; }
-  /* line 106, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
-  .restaurants:not(h2) {
-    align-items: center; }
-  /* line 110, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+  /* line 102, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
   .restaurants .card {
     width: 336px;
     display: flex;
-    flex-direction: column;
+    align-self: center;
     margin-bottom: 30px;
     -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
@@ -217,25 +276,25 @@ footer {
     border-radius: 15px;
     background-color: #FFF;
     position: relative; }
-    /* line 122, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+    /* line 115, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
     .restaurants .card__photo {
       position: relative;
       overflow: hidden;
       height: 180px; }
-      /* line 127, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+      /* line 120, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
       .restaurants .card__photo img {
         width: 100%; }
-    /* line 132, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+    /* line 125, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
     .restaurants .card-desc {
       margin: 15px;
       position: relative; }
-      /* line 136, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+      /* line 129, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
       .restaurants .card-desc h3 {
         margin: 0; }
-      /* line 140, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+      /* line 133, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
       .restaurants .card-desc__name {
         padding-bottom: 5px; }
-      /* line 144, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+      /* line 137, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
       .restaurants .card-desc__favorite {
         position: absolute;
         top: 0;
@@ -246,7 +305,7 @@ footer {
         font-size: 1.5rem;
         height: 100%;
         width: 20%; }
-    /* line 158, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+    /* line 151, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
     .restaurants .card__label {
       position: absolute;
       width: 80px;
@@ -256,17 +315,20 @@ footer {
       align-items: center;
       justify-content: center;
       font-weight: 500;
-      font-size: 15px;
+      font-size: 1rem;
       color: #278870;
       top: 15px;
       right: 15px; }
 
 /* line 1, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
-.bg-image img {
-  width: 100%;
-  margin-bottom: -50px; }
+.bg-image {
+  max-height: 270px; }
+  /* line 4, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+  .bg-image img {
+    width: 100%;
+    margin-bottom: -50px; }
 
-/* line 6, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+/* line 10, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
 .bt-back {
   position: absolute;
   height: 35px;
@@ -278,11 +340,11 @@ footer {
   align-items: center;
   border: 0px solid #EAEAEA;
   border-radius: 50%; }
-  /* line 18, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+  /* line 22, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
   .bt-back:hover {
-    border: 1px solid #d1d1d1; }
+    border: 1px solid #e7e7e7; }
 
-/* line 23, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+/* line 27, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
 .menus {
   background-color: #F6F6F6;
   border-radius: 42px 42px 0px 0px;
@@ -290,34 +352,34 @@ footer {
   position: relative;
   display: flex;
   flex-direction: column; }
-  /* line 31, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+  /* line 35, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
   .menus .top-menu {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 30px; }
-    /* line 37, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
-    .menus .top-menu .favorite {
+    margin-bottom: 30px;
+    position: relative; }
+    /* line 42, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+    .menus .top-menu .card-desc__favorite {
       font-size: 1.5rem;
       color: #000;
       padding-right: 20px;
-      position: relative;
-      top: 6px; }
-  /* line 46, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+      margin-right: 15px; }
+  /* line 50, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
   .menus .choix-plat {
     margin-bottom: 32px; }
-    /* line 49, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+    /* line 53, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
     .menus .choix-plat .titre {
       color: #000;
       font-size: 1rem;
       font-weight: 200; }
-    /* line 55, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+    /* line 59, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
     .menus .choix-plat .filet {
       height: 3px;
       width: 40px;
       background-color: #99E2D0;
       margin: 5px 0 12px 0; }
-    /* line 62, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+    /* line 66, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
     .menus .choix-plat .plat {
       width: calc(100%-40px);
       min-width: 350px;
@@ -330,38 +392,38 @@ footer {
       -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
       -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
       box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15); }
-      /* line 73, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+      /* line 77, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
       .menus .choix-plat .plat__nom {
         font-size: 1.125rem;
         font-weight: 500;
         line-height: 1.8rem; }
-      /* line 79, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+      /* line 83, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
       .menus .choix-plat .plat__ligne2 {
         display: flex;
         flex-direction: row;
         justify-content: space-between; }
-      /* line 85, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+      /* line 89, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
       .menus .choix-plat .plat__desc {
         font-size: 1rem;
         font-weight: 300; }
-      /* line 90, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+      /* line 94, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
       .menus .choix-plat .plat__prix {
         font-size: 1rem;
         font-weight: bold; }
-      /* line 95, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+      /* line 99, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
       .menus .choix-plat .plat__valid {
         height: 100%;
         position: absolute;
         top: 0;
         right: 0;
         opacity: 0.5; }
-        /* line 104, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+        /* line 108, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
         .menus .choix-plat .plat__valid__bg {
           width: 60px;
           height: 100%;
           background: #99E2D0;
           border-radius: 0px 15px 15px 0px; }
-        /* line 111, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+        /* line 115, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
         .menus .choix-plat .plat__valid__icon {
           height: 100%;
           width: 100%;
@@ -372,7 +434,7 @@ footer {
           top: 0;
           color: #FFF;
           font-size: 1.3rem; }
-  /* line 126, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+  /* line 130, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
   .menus .button-container {
     display: flex;
     justify-content: center;

@@ -23,7 +23,7 @@
     > div {
         text-align: center;
         font-weight: 300;
-        font-size: 18px;
+        font-size: 1.125rem;
         margin-bottom: 30px;
     }
 }
@@ -60,37 +60,34 @@
         }
 
 
-        //  NOTE: Créer mixin pour circle avec redimenssionement (ex : placement num = largeur circle /2)
-
         .circle-num {
-            width: 24px;
-            height: 24px;
+            width: $circle-diam;
+            height: $circle-diam;
             position: relative;
+            left: ($circle-diam/2)*-1;
 
 
             .circle {
-                width: 24px;
-                height: 24px;
+                width: $circle-diam;
+                height: $circle-diam;
                 background-color: $colour-primary;
                 z-index: 4;
                 position: absolute;
-                border-radius: 30px;
-                left: -12px;
+                border-radius: 50%;
             }
 
             .number {
                 color: $colour-background1;
                 z-index: 5;
                 position: absolute;
-                width: 24px;
-                height: 24px;
-                text-align: center;
+                width: $circle-diam;
+                height: $circle-diam;
                 font-weight: 400;
                 font-size: 0.85rem;
-                left: -12px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
             }
         }
     }
@@ -102,16 +99,12 @@
     display: flex;
     flex-direction: column;
 
-    //    FIXME: je n'arrive pas à isoler le h2 pour qui'l reste à gauche
-    &:not(h2) {
-        align-items: center;
-    }
-
     .card {
-        //        height: 252px;
+        //        CHANGES: mettre une max-height aux images des cards ?
+        //    height: 252px;
         width: 336px;
         display: flex;
-        flex-direction: column;
+        align-self: center;
         margin-bottom: 30px;
         @include shadow;
         overflow: hidden;
@@ -148,10 +141,10 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
                 font-size: 1.5rem;
                 height: 100%;
                 width: 20%;
+
             }
         }
 
@@ -164,7 +157,7 @@
             align-items: center;
             justify-content: center;
             font-weight: 500;
-            font-size: 15px;
+            font-size: 1rem;
             color: darken($colour-tertiary, 40%);
             top: 15px;
             right: 15px;

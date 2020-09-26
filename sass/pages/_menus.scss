@@ -1,6 +1,10 @@
-.bg-image img {
-    width: 100%;
-    margin-bottom: -50px;
+.bg-image {
+    max-height: 270px;
+
+    img {
+        width: 100%;
+        margin-bottom: -50px;
+    }
 }
 
 .bt-back {
@@ -15,9 +19,9 @@
     border: 0px solid $colour-background3;
     border-radius: 50%;
 
-        &:hover {
-            border: 1px solid darken($colour-background3, 10%);
-        }
+    &:hover {
+        border: 1px solid darken($colour-background3, 1%);
+    }
 }
 
 .menus {
@@ -33,13 +37,13 @@
         flex-direction: row;
         justify-content: space-between;
         margin-bottom: 30px;
+        position: relative;
 
-        .favorite {
+        .card-desc__favorite {
             font-size: 1.5rem;
             color: $colour-text1;
             padding-right: 20px;
-            position: relative;
-            top: 6px;
+            margin-right: 15px;
         }
     }
 
@@ -98,7 +102,7 @@
                 top: 0;
                 right: 0;
 
-                // DEBUG: transparence avant anim
+                // DEBUG: transparence en attendant l'anim
                 opacity: 0.5;
 
                 &__bg {
