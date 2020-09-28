@@ -73,6 +73,20 @@
             position: relative;
             margin-bottom: 12px;
             @include shadow;
+            overflow: hidden;
+
+            //décalage pour déplacement anim card
+            top: $distance*-1;
+
+            opacity: 0;
+            animation: move-card $duree-card cubic-bezier(0, 0, 0, 1) forwards;
+
+            @for $i from 1 through 10 {
+                &--#{$i} {
+                    animation-delay: $anim-delay * $i;
+                }
+            }
+
 
             &__nom {
                 font-size: 1.125rem;
@@ -89,11 +103,19 @@
             &__desc {
                 font-size: 1rem;
                 font-weight: 300;
+
+                transition-property: width;
+                transition-duration: 400ms;
+
+                // DEBUG: border
+                border: 1px solid red;
             }
 
             &__prix {
                 font-size: 1rem;
                 font-weight: bold;
+
+                transition-duration: 400ms;
             }
 
             &__valid {
@@ -102,14 +124,14 @@
                 top: 0;
                 right: 0;
 
-                // DEBUG: transparence en attendant l'anim
-                opacity: 0.5;
+                transition-duration: 400ms;
+                transform: translateX(60px);
+
 
                 &__bg {
                     width: 60px;
                     height: 100%;
                     background: $colour-tertiary;
-                    border-radius: 0px 15px 15px 0px;
                 }
 
                 &__icon {
@@ -122,6 +144,9 @@
                     top: 0;
                     color: $colour-background1;
                     font-size: 1.3rem;
+
+                    transform: rotate(360deg);
+                    transition-duration: 400ms;
                 }
             }
         }
@@ -131,5 +156,53 @@
         display: flex;
         justify-content: center;
         margin: 10px 0 50px 0;
+    }
+}
+
+
+//anim volet droite (valid)
+.plat {
+    &:hover &__valid {
+        transform: translateX(0px);
+    }
+
+    &:hover &__valid__icon {
+        transform: rotate(0deg);
+    }
+
+    &:hover &__prix {
+        transform: translateX(-60px);
+    }
+
+    &:hover &__desc::after {
+        
+        // condition si le texte dépasse une certaine largeur
+        content: "...";
+        
+        justify-content: space-between;
+    }
+
+}
+
+
+ 
+//    &:hover &__desc {
+//        width: 100%-25px;
+//    }
+
+//    &:hover &__desc::after {
+//        content: "...";
+//    }
+
+
+
+@keyframes move-card {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY($distance);
+        opacity: 1;
     }
 }

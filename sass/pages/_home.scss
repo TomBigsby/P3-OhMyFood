@@ -49,6 +49,10 @@
         align-items: center;
         @include shadow;
 
+        &--pink{
+            background: lighten($colour-primary, 35%);
+        }
+        
         i {
             padding: 0 18px 0 30px;
 
@@ -93,6 +97,7 @@
     }
 }
 
+
 .restaurants {
     background-color: $colour-background2;
     padding: 1px 20px 40px 20px;
@@ -101,7 +106,6 @@
 
     .card {
         //        CHANGES: mettre une max-height aux images des cards ?
-        //    height: 252px;
         width: 336px;
         display: flex;
         align-self: center;
@@ -111,6 +115,8 @@
         border-radius: 15px;
         background-color: $colour-background1;
         position: relative;
+
+
 
         &__photo {
             position: relative;

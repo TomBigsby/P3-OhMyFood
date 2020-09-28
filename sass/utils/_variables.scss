@@ -4,6 +4,7 @@ $colour-tertiary: #99E2D0;
 $colour-background1: #FFF;
 $colour-background2: #F6F6F6;
 $colour-background3: #EAEAEA;
+$colour-background4: #353535;
 $colour-text1: #000;
 
 // cercle violet Home
@@ -11,4 +12,16 @@ $circle-diam:24px;
 
 // anim coeur fav
 $heart-size: 24px;
-$duree: 250ms;
+$duree-fav: 250ms;
+
+$duree-card: 1s;
+$distance: -45px;
+$anim-delay: $duree-card / 6;
+
+// footer
+$duree-loader: 1s;
+$loader-circle-size: 15px;
+//NOTE: couleurs pour boucle
+$loader-color1:$colour-primary;
+$loader-color2:$colour-secondary;
+$loader-color3:$colour-tertiary;

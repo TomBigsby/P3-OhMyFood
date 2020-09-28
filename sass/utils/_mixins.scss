@@ -21,3 +21,20 @@
     transform: scale(0.97);
     box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.30);
 }
+
+//@mixin cut-text ($size) {
+//    @if(width<$size) {
+//        color: red;
+//    }
+//
+//    @error $size;
+//}
+
+/* DEBUG:  */
+
+//@mixin debugg {
+//
+// @error "test display error";
+// @warn "test display warn";
+//    @debug "test display debug";
+//}
