@@ -49,10 +49,10 @@
         align-items: center;
         @include shadow;
 
-        &--pink{
+        &--pink {
             background: lighten($colour-primary, 35%);
         }
-        
+
         i {
             padding: 0 18px 0 30px;
 
@@ -140,6 +140,11 @@
                 padding-bottom: 5px;
             }
 
+            &__city {
+                font-weight: 300;
+            }
+
+
             &__favorite {
                 position: absolute;
                 top: 0;
@@ -163,7 +168,7 @@
             align-items: center;
             justify-content: center;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.85rem;
             color: darken($colour-tertiary, 40%);
             top: 15px;
             right: 15px;

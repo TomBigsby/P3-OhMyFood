@@ -265,7 +265,8 @@ footer {
     line-height: 27px; }
   /* line 20, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/layouts/_footer.scss */
   footer i {
-    margin-right: 10px; }
+    margin-right: 10px;
+    font-size: 0.9rem; }
 
 /* line 1, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
 .localisation {
@@ -390,6 +391,9 @@ footer {
       .restaurants .card-desc__name {
         padding-bottom: 5px; }
       /* line 143, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+      .restaurants .card-desc__city {
+        font-weight: 300; }
+      /* line 148, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
       .restaurants .card-desc__favorite {
         position: absolute;
         top: 0;
@@ -400,7 +404,7 @@ footer {
         font-size: 1.5rem;
         height: 100%;
         width: 20%; }
-    /* line 157, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
+    /* line 162, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_home.scss */
     .restaurants .card__label {
       position: absolute;
       width: 80px;
@@ -410,7 +414,7 @@ footer {
       align-items: center;
       justify-content: center;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 0.85rem;
       color: #278870;
       top: 15px;
       right: 15px; }
