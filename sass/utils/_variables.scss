@@ -1,3 +1,4 @@
+// couleurs
 $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
@@ -7,8 +8,12 @@ $colour-background3: #EAEAEA;
 $colour-background4: #353535;
 $colour-text1: #000;
 
+//goutières Choix
+$goutiere:15px;
+
 // cercle violet Home
 $circle-diam:24px;
+$circle-diam-tablet:$circle-diam*1.2;
 
 // anim coeur fav
 $heart-size: 24px;
@@ -25,3 +30,10 @@ $loader-circle-size: 15px;
 $loader-color1:$colour-primary;
 $loader-color2:$colour-secondary;
 $loader-color3:$colour-tertiary;
+
+
+// Breakpoints Media queries 
+//DEBUG: var pas utilisées
+$breakpoint-mobile: 650px;
+$breakpoint-tablet: 651px;
+$breakpoint-desktop: 1280px;

@@ -103,12 +103,11 @@
             &__desc {
                 font-size: 1rem;
                 font-weight: 300;
+                width: 93%;
+                overflow: hidden;
+                white-space: nowrap;
 
-                transition-property: width;
-                transition-duration: 400ms;
-
-                // DEBUG: border
-                border: 1px solid red;
+                transition: width 400ms, text-overflow 400ms;
             }
 
             &__prix {
@@ -174,25 +173,15 @@
         transform: translateX(-60px);
     }
 
-    &:hover &__desc::after {
-        
+    &:hover &__desc {
         // condition si le texte dépasse une certaine largeur
-        content: "...";
-        
-        justify-content: space-between;
+        width: 75%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
 }
-
-
- 
-//    &:hover &__desc {
-//        width: 100%-25px;
-//    }
-
-//    &:hover &__desc::after {
-//        content: "...";
-//    }
 
 
 

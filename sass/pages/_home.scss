@@ -1,17 +1,3 @@
-.localisation {
-    font-size: 1rem;
-    color: $colour-text1;
-    height: 50px;
-    background-color: $colour-background3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    i {
-        margin-right: 10px;
-    }
-}
-
 // bloc "Book the menu you like"
 .container {
     background-color: $colour-background2;
@@ -28,7 +14,7 @@
     }
 }
 
-// bloc "How it work"
+// NOTE: bloc "How it work"
 .hiw {
     background-color: $colour-background1;
     margin: 20px;
@@ -36,17 +22,24 @@
     flex-direction: column;
     align-items: center;
 
+    .choice-container {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet-only {
+            flex-direction: row;
+            font-size: 1.4rem;
+        }
+    }
+
     .choice {
         width: 336px;
         height: 74px;
         background: $colour-background2;
         border-radius: 20px;
-        margin-bottom: 24px;
         font-weight: 500;
+        position: relative;
         display: flex;
-        flex-direction: row;
-        justify-content: left;
-        align-items: center;
         @include shadow;
 
         &--pink {
@@ -55,7 +48,6 @@
 
         i {
             padding: 0 18px 0 30px;
-
         }
 
         //   taille icone tel mobile + grande
@@ -63,31 +55,66 @@
             font-size: 1.2rem;
         }
 
+        @include mobile-only {
+            margin-bottom: 24px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        @include tablet-only {
+            max-width: 170px;
+            height: 150px;
+            margin: $goutiere;
+            padding: 15px;
+            text-align: center;
+            align-items: center;
+
+            i {
+                display: none;
+            }
+        }
 
         .circle-num {
-            width: $circle-diam;
-            height: $circle-diam;
-            position: relative;
-            left: ($circle-diam/2)*-1;
+            position: absolute;
 
-
-            .circle {
+            @include mobile-only {
                 width: $circle-diam;
                 height: $circle-diam;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                left: $circle-diam-tablet/2*-1;
+            }
+
+            @include tablet-only {
+                // NOTE: décalage lié au padding : 15px x2
+                width: calc(100% - 30px);
+                height: 100%;
+                top: $circle-diam-tablet/2*-1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .circle {
+                width: $circle-diam-tablet;
+                height: $circle-diam-tablet;
                 background-color: $colour-primary;
                 z-index: 4;
                 position: absolute;
                 border-radius: 50%;
+
             }
 
             .number {
                 color: $colour-background1;
                 z-index: 5;
                 position: absolute;
-                width: $circle-diam;
-                height: $circle-diam;
+                width: $circle-diam-tablet;
+                height: $circle-diam-tablet;
                 font-weight: 400;
                 font-size: 0.85rem;
+
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -97,24 +124,49 @@
     }
 }
 
+.titre-h2 {
+    @include tablet-only {
+        // (largeur de bloc + padding + margin) x3
+        width: calc((170px + #{$goutiere} + 30px)*3);
+    }
+
+    @include mobile-only {
+        // largeur de bloc
+        width: 336px;
+    }
+
+    h2 {
+        margin: 40px 0 20px 0;
+    }
+}
 
 .restaurants {
     background-color: $colour-background2;
-    padding: 1px 20px 40px 20px;
+    padding: 20px 20px 40px 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
 
     .card {
-        //        CHANGES: mettre une max-height aux images des cards ?
+        //  CHANGES: mettre une max-height aux images des cards ?
         width: 336px;
         display: flex;
         align-self: center;
-        margin-bottom: 30px;
+        margin: 10px;
+        margin-bottom: 10px;
         @include shadow;
         overflow: hidden;
         border-radius: 15px;
         background-color: $colour-background1;
         position: relative;
+        display: flex;
 
 
 

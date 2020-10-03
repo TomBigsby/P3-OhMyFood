@@ -69,8 +69,8 @@ footer a:hover {
           flex-direction: column;
   background: #353535;
   opacity: 1;
-  -webkit-animation: display 3s ease-in-out normal none;
-          animation: display 3s ease-in-out normal none;
+  -webkit-animation: loader-page 3s ease-in-out normal forwards;
+          animation: loader-page 3s ease-in-out normal forwards;
 }
 
 .loader-container .logo {
@@ -176,14 +176,15 @@ footer a:hover {
   0% {
     opacity: 1;
   }
-  90% {
+  75% {
     opacity: 1;
   }
   99% {
     opacity: 0;
   }
   100% {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -191,14 +192,15 @@ footer a:hover {
   0% {
     opacity: 1;
   }
-  90% {
+  75% {
     opacity: 1;
   }
   99% {
     opacity: 0;
   }
   100% {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -357,8 +359,6 @@ button {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  -webkit-transform: scale(1);
-          transform: scale(1);
 }
 
 @keyframes grow-plus {
@@ -378,8 +378,6 @@ button {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  -webkit-transform: scale(1);
-          transform: scale(1);
 }
 
 .container-header {
@@ -393,6 +391,24 @@ button {
   position: relative;
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 500px) {
+  .container-header {
+    background: red;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  .container-header {
+    background: blue;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container-header {
+    background: green;
+  }
 }
 
 .container-header .logo-top {
@@ -421,6 +437,7 @@ footer .footer-menu {
 
 footer i {
   margin-right: 10px;
+  font-size: 0.9rem;
 }
 
 .localisation {
@@ -480,6 +497,15 @@ footer i {
           align-items: center;
 }
 
+.hiw h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  color: red;
+}
+
 .hiw .choice {
   width: 336px;
   height: 74px;
@@ -502,6 +528,10 @@ footer i {
           align-items: center;
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.hiw .choice--pink {
+  background: #f2eafb;
 }
 
 .hiw .choice i {
@@ -598,6 +628,10 @@ footer i {
   padding-bottom: 5px;
 }
 
+.restaurants .card-desc__city {
+  font-weight: 300;
+}
+
 .restaurants .card-desc__favorite {
   position: absolute;
   top: 0;
@@ -631,7 +665,7 @@ footer i {
       -ms-flex-pack: center;
           justify-content: center;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: #278870;
   top: 15px;
   right: 15px;
