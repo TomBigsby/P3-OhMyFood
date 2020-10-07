@@ -695,7 +695,7 @@ img {
       @media screen and (max-width: 750px) {
         /* line 138, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
         .menus .choix-plat .plat {
-          min-width: 350px;
+          min-width: 300px;
           padding-right: 25px; } }
       @media screen and (min-width: 751px) {
         /* line 138, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */

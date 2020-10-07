@@ -154,7 +154,7 @@ img {
             @include shadow;
 
             @include mobile-only {
-                min-width: 350px;
+                min-width: 300px;
                 padding-right: 25px;
             }
 
