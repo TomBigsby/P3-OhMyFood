@@ -1,23 +1,46 @@
-.bg-image {
-    max-height: 270px;
+main {
+    max-width: $breakpoint-desktop;
+    margin: auto;
+}
 
-    img {
-        width: 100%;
-        margin-bottom: -50px;
+.bg-image {
+
+    @include mobile-only {
+        max-height: 270px;
+    }
+
+    @include tablet-only {
+        max-height: 400px;
+    }
+
+    @include desktop-only {
+        max-height: 600px;
     }
 }
 
+img {
+    width: 100%;
+}
+
 .bt-back {
-    position: absolute;
-    height: 35px;
-    width: 35px;
-    margin: 12px;
     font-size: 1.3rem;
+
+    position: absolute;
+
     display: flex;
-    justify-content: center;
     align-items: center;
-    border: 0px solid $colour-background3;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+    margin: 12px;
+
+    border: 0 solid $colour-background3;
     border-radius: 50%;
+
+    @include desktop-only {
+        display: none;
+    }
 
     &:hover {
         border: 1px solid darken($colour-background3, 1%);
@@ -25,25 +48,48 @@
 }
 
 .menus {
-    background-color: $colour-background2;
-    border-radius: 42px 42px 0px 0px;
-    padding: 35px 20px;
     position: relative;
+
     display: flex;
     flex-direction: column;
 
+    transform: translateY(-50px);
+
+    border-radius: 42px 42px 0 0;
+    background-color: $colour-background2;
+
+    @include mobile-only {
+        padding: 35px 20px;
+    }
+
+    @include tablet-only {
+        padding: 40px 30px;
+    }
+
+    @include desktop-only {
+        border-radius: 0;
+    }
+
+
     .top-menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 30px;
         position: relative;
 
+        display: flex;
+        flex-direction: row;
+
+        margin-bottom: 30px;
+
+        letter-spacing: 0.07rem;
+
+        @include mobile-only {
+            justify-content: space-between;
+        }
+
         .card-desc__favorite {
-            font-size: 1.5rem;
+            margin: 0 15px;
+            padding: 20px;
+
             color: $colour-text1;
-            padding-right: 20px;
-            margin-right: 15px;
         }
     }
 
@@ -51,35 +97,75 @@
         margin-bottom: 32px;
 
         .titre {
-            color: $colour-text1;
-            font-size: 1rem;
             font-weight: 200;
+
+            color: $colour-text1;
+
+            @include mobile-only {
+                font-size: 1rem;
+            }
+
+            @include tablet-only {
+                font-size: 1.25rem;
+            }
         }
 
         .filet {
-            height: 3px;
             width: 40px;
-            background-color: $colour-tertiary;
+            height: 3px;
             margin: 5px 0 12px 0;
+
+            background-color: $colour-tertiary;
+        }
+
+        .titre,
+        .filet {
+            margin-left: 10px;
+        }
+
+        .plats {
+            @include tablet-only {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                width: calc(100% + 10px + 10px);
+                // NOTE: réajustement margin pour décalage goutières
+                margin-left: -10px;
+            }
         }
 
         .plat {
-            width: calc(100%-40px);
-            min-width: 350px;
-            background-color: $colour-background1;
-            border-radius: 15px;
-            padding: 12px;
-            padding-right: 25px;
             position: relative;
-            margin-bottom: 12px;
-            @include shadow;
-            overflow: hidden;
-
-            //décalage pour déplacement anim card
+            // NOTE: décalage pour compenser le déplacement anim card
             top: $distance*-1;
 
-            opacity: 0;
+            overflow: hidden;
+
+            margin-bottom: 12px;
+            padding: 12px;
+
             animation: move-card $duree-card cubic-bezier(0, 0, 0, 1) forwards;
+
+            opacity: 0;
+            border-radius: 15px;
+            background-color: $colour-background1;
+
+            @include shadow;
+
+            @include mobile-only {
+                min-width: 350px;
+                padding-right: 25px;
+            }
+
+            @include tablet-only {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                width: calc(100% - 40px);
+                margin: 0 10px 0 10px;
+            }
 
             @for $i from 1 through 10 {
                 &--#{$i} {
@@ -87,41 +173,50 @@
                 }
             }
 
-
             &__nom {
                 font-size: 1.125rem;
                 font-weight: 500;
                 line-height: 1.8rem;
+                // NOTE: bloc Nom réduit de 60px à droite (largeur valid) 
+
+                width: calc(100% - 60px);
             }
 
             &__ligne2 {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+
+                transition: width 400ms, text-overflow 400ms, margin-right 400ms, overflow 400ms;
             }
 
             &__desc {
                 font-size: 1rem;
                 font-weight: 300;
-                width: 93%;
+                // NOTE : le texte ne dépasse pas du bloc
+
                 overflow: hidden;
-                white-space: nowrap;
 
                 transition: width 400ms, text-overflow 400ms;
+                // NOTE : pas de retour à la ligne du texte
+                white-space: nowrap;
+                // NOTE : ajout de "..." à la fin du texte
+                text-overflow: ellipsis;
             }
 
             &__prix {
                 font-size: 1rem;
                 font-weight: bold;
 
-                transition-duration: 400ms;
+                transition: margin-right 400ms;
             }
 
             &__valid {
-                height: 100%;
                 position: absolute;
                 top: 0;
                 right: 0;
+
+                height: 100%;
 
                 transition-duration: 400ms;
                 transform: translateX(60px);
@@ -130,22 +225,27 @@
                 &__bg {
                     width: 60px;
                     height: 100%;
+
                     background: $colour-tertiary;
                 }
 
                 &__icon {
-                    height: 100%;
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: absolute;
-                    top: 0;
-                    color: $colour-background1;
                     font-size: 1.3rem;
 
-                    transform: rotate(360deg);
+                    position: absolute;
+                    top: 0;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    width: 100%;
+                    height: 100%;
+
                     transition-duration: 400ms;
+                    transform: rotate(360deg);
+
+                    color: $colour-background1;
                 }
             }
         }
@@ -154,12 +254,12 @@
     .button-container {
         display: flex;
         justify-content: center;
+
         margin: 10px 0 50px 0;
     }
 }
 
-
-//anim volet droite (valid)
+//anim volet droit (valid)
 .plat {
     &:hover &__valid {
         transform: translateX(0px);
@@ -169,21 +269,18 @@
         transform: rotate(0deg);
     }
 
-    &:hover &__prix {
-        transform: translateX(-60px);
-    }
-
     &:hover &__desc {
-        // condition si le texte dépasse une certaine largeur
-        width: 75%;
-        white-space: nowrap;
         overflow: hidden;
+        // NOTE: condition si le texte dépasse une certaine largeur
+
+        white-space: nowrap;
         text-overflow: ellipsis;
     }
 
+    &:hover &__prix {
+        margin-right: 60px;
+    }
 }
-
-
 
 @keyframes move-card {
     0% {
@@ -192,6 +289,7 @@
 
     100% {
         transform: translateY($distance);
+
         opacity: 1;
     }
 }

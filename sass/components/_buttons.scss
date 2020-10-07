@@ -1,28 +1,33 @@
 button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-family: "Roboto", sans-serif;
     font-size: 1rem;
+    font-weight: 400;
+
     border: none;
 }
 
 .button1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 220px;
     height: 50px;
+
+    text-align: center;
+
     color: $colour-text1;
+    color: $colour-background1;
     border-radius: 30px;
     background: linear-gradient(175deg, $colour-secondary 10%, $colour-primary 95%);
-    color: $colour-background1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+
     @include shadow-button;
 
     &:hover {
-        @include shadow-button--hover
+        @include shadow-button--hover;
     }
 
     &:active {
-        @include shadow-button--active
+        @include shadow-button--active;
     }
 }

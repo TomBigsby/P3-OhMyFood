@@ -8,29 +8,33 @@
     color: $colour-text1;
 
     &:hover {
-        animation: grow-plus $duree-fav;
         transition: transform $duree-fav ease;
+        animation: grow-plus $duree-fav;
     }
 
     &:hover + .coeur1 {
-        animation: grow $duree-fav;
         transition: transform $duree-fav ease;
+        animation: grow $duree-fav;
+
         animation-fill-mode: forwards;
     }
 }
 
 .coeur1 {
+    transform: scale(0);
+
     background: -webkit-linear-gradient(175deg, $colour-secondary 10%, $colour-primary 95%);
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
-    transform: scale(0);
 }
 
 @for $i from 1 through 3 {
     .coeur#{$i} {
         font-size: $heart-size;
-        z-index: $i;
+
         position: absolute;
+        z-index: $i;
     }
 }
 
@@ -64,7 +68,4 @@
     100% {
         transform: scale(1);
     }
-
-//    NOTE: à varifier si code utile
-//    transform: scale(1);
 }

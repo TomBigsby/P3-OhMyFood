@@ -1,46 +1,80 @@
 // bloc "Book the menu you like"
 .container {
-    background-color: $colour-background2;
-    padding: 40px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+
+    padding: 40px;
+
+    background-color: $colour-background2;
 
     > div {
-        text-align: center;
-        font-weight: 300;
         font-size: 1.125rem;
+        font-weight: 300;
+
         margin-bottom: 30px;
+
+        text-align: center;
     }
 }
 
 // NOTE: bloc "How it work"
 .hiw {
-    background-color: $colour-background1;
-    margin: 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+
+    padding: 20px;
+
+    background-color: $colour-background1;
+    width: auto;
+    
 
     .choice-container {
         display: flex;
         flex-direction: column;
 
         @include tablet-only {
-            flex-direction: row;
             font-size: 1.4rem;
+
+            flex-direction: row;
         }
     }
 
     .choice {
+        font-weight: 500;
+
+        position: relative;
+
+        display: flex;
+
         width: 336px;
         height: 74px;
-        background: $colour-background2;
+
         border-radius: 20px;
-        font-weight: 500;
-        position: relative;
-        display: flex;
+        background: $colour-background2;
+
         @include shadow;
+        @include mobile-only {
+            align-items: center;
+            justify-content: flex-start;
+
+            margin-bottom: 24px;
+        }
+        @include tablet-only {
+            align-items: center;
+
+            max-width: 170px;
+            height: 150px;
+            margin: $goutiere;
+            padding: 15px;
+
+            text-align: center;
+
+            i {
+                display: none;
+            }
+        }
 
         &--pink {
             background: lighten($colour-primary, 35%);
@@ -50,89 +84,80 @@
             padding: 0 18px 0 30px;
         }
 
-        //   taille icone tel mobile + grande
+        // NOTE: taille icone tel mobile plus grande
         &:nth-child(1) i {
             font-size: 1.2rem;
-        }
-
-        @include mobile-only {
-            margin-bottom: 24px;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        @include tablet-only {
-            max-width: 170px;
-            height: 150px;
-            margin: $goutiere;
-            padding: 15px;
-            text-align: center;
-            align-items: center;
-
-            i {
-                display: none;
-            }
         }
 
         .circle-num {
             position: absolute;
 
             @include mobile-only {
+                left: $circle-diam-tablet/2*-1;
+
+                display: flex;
+                align-items: flex-start;
+                flex-direction: row;
+
                 width: $circle-diam;
                 height: $circle-diam;
-                display: flex;
-                flex-direction: row;
-                align-items: flex-start;
-                left: $circle-diam-tablet/2*-1;
             }
-
             @include tablet-only {
-                // NOTE: décalage lié au padding : 15px x2
-                width: calc(100% - 30px);
-                height: 100%;
                 top: $circle-diam-tablet/2*-1;
+
                 display: flex;
-                flex-direction: column;
                 align-items: center;
+                flex-direction: column;
+                // NOTE: décalage lié au padding : 15px x2
+
+                width: calc(100% - 30px);
             }
 
             .circle {
+                position: absolute;
+                z-index: 4;
+
                 width: $circle-diam-tablet;
                 height: $circle-diam-tablet;
-                background-color: $colour-primary;
-                z-index: 4;
-                position: absolute;
-                border-radius: 50%;
 
+                border-radius: 50%;
+                background-color: $colour-primary;
             }
 
             .number {
-                color: $colour-background1;
-                z-index: 5;
-                position: absolute;
-                width: $circle-diam-tablet;
-                height: $circle-diam-tablet;
-                font-weight: 400;
                 font-size: 0.85rem;
+                font-weight: 400;
+
+                position: absolute;
+                z-index: 5;
 
                 display: flex;
-                justify-content: center;
                 align-items: center;
+                justify-content: center;
 
+                width: $circle-diam-tablet;
+                height: $circle-diam-tablet;
+
+                color: $colour-background1;
             }
         }
     }
 }
 
 .titre-h2 {
+    @include mobile-only {
+        // NOTE: largeur de bloc
+        width: 336px;
+    }
     @include tablet-only {
-        // (largeur de bloc + padding + margin) x3
+        // NOTE: (largeur de bloc + padding + margin) x3
         width: calc((170px + #{$goutiere} + 30px)*3);
     }
+    @include desktop-only {
+        display: flex;
+        justify-content: center;
 
-    @include mobile-only {
-        // largeur de bloc
-        width: 336px;
+        width: 100%;
     }
 
     h2 {
@@ -141,89 +166,111 @@
 }
 
 .restaurants {
-    background-color: $colour-background2;
-    padding: 20px 20px 40px 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+
+    padding: 20px 20px 40px 20px;
+
+    background-color: $colour-background2;
 
     .cards {
         display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: center;
-    }
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        // NOTE: changement de la largeur du container pour que les blocs soient toujours centrés et lorsque le dernière ligne n'est pas complète, aligné à gauche.
+        //  calc (largeur bloc + largeur goutière) x nombre blocs max en largeur
 
-    .card {
-        //  CHANGES: mettre une max-height aux images des cards ?
-        width: 336px;
-        display: flex;
-        align-self: center;
-        margin: 10px;
-        margin-bottom: 10px;
-        @include shadow;
-        overflow: hidden;
-        border-radius: 15px;
-        background-color: $colour-background1;
-        position: relative;
-        display: flex;
-
-
-
-        &__photo {
-            position: relative;
-            overflow: hidden;
-            height: 180px;
-
-            img {
-                width: 100%;
-            }
+        @include mobile-only {
+            width: calc((336px + 20px)*1);
+        }
+        @include tablet-only {
+            width: calc((336px + 20px)*2);
+        }
+        @include desktop-only {
+            width: calc((336px + 20px)*3);
         }
 
-        &-desc {
-            margin: 15px;
+        .card {
+            display: flex;
+            overflow: hidden;
+            align-self: center;
+
+            width: 336px;
+            margin: 10px;
+            margin-bottom: 10px;
+            
             position: relative;
 
-            h3 {
-                margin: 0;
+            border-radius: 15px;
+            background-color: $colour-background1;
+
+            @include shadow;
+
+            &__photo {
+                position: relative;
+
+                overflow: hidden;
+
+                height: 180px;
+
+                img {
+                    width: 100%;
+                }
             }
 
-            &__name {
-                padding-bottom: 5px;
+            &-desc {
+                position: relative;
+
+                margin: 15px;
+
+                h3 {
+                    margin: 0;
+                }
+
+                &__name {
+                    padding-bottom: 5px;
+                }
+
+                &__city {
+                    font-weight: 300;
+                }
+
+
+                &__favorite {
+                    font-size: 1.5rem;
+
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    width: 20%;
+                    height: 100%;
+                }
             }
 
-            &__city {
-                font-weight: 300;
-            }
+            &__label {
+                font-size: 0.85rem;
+                font-weight: 500;
 
-
-            &__favorite {
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: 15px;
+                right: 15px;
+
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 1.5rem;
-                height: 100%;
-                width: 20%;
 
+                width: 80px;
+                height: 30px;
+
+                color: darken($colour-tertiary, 40%);
+                background-color: $colour-tertiary;
             }
-        }
-
-        &__label {
-            position: absolute;
-            width: 80px;
-            height: 30px;
-            background-color: $colour-tertiary;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
-            font-size: 0.85rem;
-            color: darken($colour-tertiary, 40%);
-            top: 15px;
-            right: 15px;
         }
     }
 }

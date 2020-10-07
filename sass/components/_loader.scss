@@ -1,21 +1,25 @@
 .loader-container {
     position: absolute;
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    width: 100%;
     z-index: 20;
 
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    background: $colour-background4;
+    justify-content: center;
 
-    opacity: 1;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+
     animation: loader-page 3s ease-in-out normal forwards;
 
-    .logo {
+    opacity: 1;
+    background: $colour-background4;
+
+    .logo-loader {
+        width: auto;
+        height: 30px;
         margin-bottom: 20px;
     }
 }
@@ -24,54 +28,60 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
     width: $loader-circle-size * 3+15px;
 
     @for $i from 1 through 3 {
-
         &__circle {
-
             &#{$i} {
                 width: $loader-circle-size;
                 height: $loader-circle-size;
-                border-radius: 50%;
-                background: nth($loader-color1 $loader-color2 $loader-color3, $i);
 
                 animation: circle-sparkle $duree-loader ease-in-out alternate-reverse infinite;
-
                 animation-delay: $duree-loader/2 * $i;
+
+                border-radius: 50%;
+                background: nth($loader-color1 $loader-color2 $loader-color3, $i);
             }
-
         }
     }
+}
 
-    @keyframes circle-sparkle {
-        from {
-            opacity: 0.3;
-        }
+// NOTE : blocage du scroll de la page le temps d'affichage du loader
+//FIXME stop scroll loader
+//body {
+//    overflow: hidden;
+//}
 
-        to {
-            opacity: 1;
-        }
+
+@keyframes circle-sparkle {
+    from {
+        opacity: 0.3;
     }
 
+    to {
+        opacity: 1;
+    }
+}
 
-    // fade-out au bout de 3s
-    @keyframes loader-page {
-        0% {
-            opacity: 1;
-        }
 
-        75% {
-            opacity: 1;
-        }
+// NOTE: fade-out au bout de 3s
+@keyframes loader-page {
+    0% {
+        opacity: 1;
+    }
 
-        99% {
-            opacity: 0;
-        }
+    75% {
+        opacity: 1;
+    }
 
-        100% {
-            opacity: 0;
-            visibility: hidden;
-        }
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        visibility: hidden;
+
+        opacity: 0;
     }
 }

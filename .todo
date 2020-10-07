@@ -5,12 +5,12 @@
 	},
 	"tags": [
 		"TODO",
-		"NOTE",
+		{ "name": "NOTE", "color": "#AAA339" },
 		"FIXME",
-		"CHANGES",
+		{ "name": "CHANGES", "color": "#696"},
 		"FUTURE",
 		"DEBUG",
-		"--------"
+		"<---"
 	],
 	"case": false,
 	"search": {

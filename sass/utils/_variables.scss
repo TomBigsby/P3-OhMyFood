@@ -1,39 +1,40 @@
-// couleurs
+//  NOTE:  couleurs
 $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
-$colour-background1: #FFF;
+$colour-background1: #FFFFFF;
 $colour-background2: #F6F6F6;
 $colour-background3: #EAEAEA;
 $colour-background4: #353535;
-$colour-text1: #000;
+$colour-text1: #000000;
 
-//goutières Choix
-$goutiere:15px;
+//  NOTE:  goutières Choix
+$goutiere: 15px;
 
-// cercle violet Home
-$circle-diam:24px;
-$circle-diam-tablet:$circle-diam*1.2;
+//  NOTE:  cercle violet Home
+$circle-diam: 24px;
+$circle-diam-tablet: $circle-diam*1.2;
 
-// anim coeur fav
+//  NOTE:  anim coeur fav
 $heart-size: 24px;
 $duree-fav: 250ms;
 
+//  NOTE:  Anim cards
 $duree-card: 1s;
 $distance: -45px;
 $anim-delay: $duree-card / 6;
 
-// footer
+//  NOTE:  footer
 $duree-loader: 1s;
 $loader-circle-size: 15px;
-//NOTE: couleurs pour boucle
-$loader-color1:$colour-primary;
-$loader-color2:$colour-secondary;
-$loader-color3:$colour-tertiary;
+
+//  NOTE:  couleurs pour boucle
+$loader-color1: $colour-primary;
+$loader-color2: $colour-secondary;
+$loader-color3: $colour-tertiary;
 
 
-// Breakpoints Media queries 
-//DEBUG: var pas utilisées
-$breakpoint-mobile: 650px;
-$breakpoint-tablet: 651px;
-$breakpoint-desktop: 1280px;
+//  NOTE:  Breakpoints Media queries 
+$breakpoint-mobile: 750px;
+$breakpoint-tablet: 751px;
+$breakpoint-desktop: 1100px;

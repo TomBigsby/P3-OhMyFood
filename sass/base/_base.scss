@@ -1,38 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900');
-
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 
 body {
-    margin: auto;
-    font-family: 'Roboto', sans-serif;
-    color: $colour-text1;
-    //  font-size par défaut
+    font-family: "Roboto", sans-serif;
+    // NOTE: valeur rem par défaut
     font-size: 16px;
+
+    margin: auto;
+
+    color: $colour-text1;
+    background-color: $colour-background2;
+
+    
 }
 
 h1 {
-    font-weight: 600;
     font-size: 1.5rem;
+    font-weight: 600;
+
     margin: 0 0 40px 0;
+
     text-align: center;
 }
 
 h2 {
-    font-family: 'Roboto', sans-serif;
-    color: $colour-text1;
-    font-weight: 600;
+    font-family: "Roboto", sans-serif;
     font-size: 1.5rem;
+    font-weight: 600;
+
     margin: 50px 0 30px 30px;
+
     text-align: left;
+
+    color: $colour-text1;
 }
 
 h4 {
-    font-family: 'Shrikhand', cursive;
-    color: $colour-text1;
+    font-family: "Shrikhand", cursive;
     font-weight: 400;
-    font-size: 1.75rem;
+
     margin: 0;
+
     text-align: left;
+
+    color: $colour-text1;
+
+    @include mobile-only {
+        font-size: 1.75rem;
+    }
+
+    @include tablet-only {
+        font-size: 2.3rem;
+    }
 }
 
 a {
@@ -41,6 +60,7 @@ a {
     &:link,
     &:active {
         text-decoration: none;
+
         color: $colour-text1;
     }
 }
@@ -51,6 +71,7 @@ footer a {
     &:link,
     &:active {
         text-decoration: none;
+
         color: $colour-background1;
     }
 }
