@@ -270,9 +270,8 @@ img {
     }
 
     &:hover &__desc {
-        overflow: hidden;
         // NOTE: condition si le texte dépasse une certaine largeur
-
+        overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
     }

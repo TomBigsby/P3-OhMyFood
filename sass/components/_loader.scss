@@ -16,6 +16,8 @@
 
     opacity: 1;
     background: $colour-background4;
+    
+    position: fixed;
 
     .logo-loader {
         width: auto;
@@ -47,12 +49,6 @@
     }
 }
 
-// NOTE : blocage du scroll de la page le temps d'affichage du loader
-//FIXME stop scroll loader
-//body {
-//    overflow: hidden;
-//}
-
 
 @keyframes circle-sparkle {
     from {
@@ -69,6 +65,7 @@
 @keyframes loader-page {
     0% {
         opacity: 1;
+        
     }
 
     75% {
@@ -84,4 +81,5 @@
 
         opacity: 0;
     }
+
 }

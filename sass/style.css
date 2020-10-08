@@ -68,20 +68,21 @@ footer a:hover {
   padding: 0;
   animation: loader-page 3s ease-in-out normal forwards;
   opacity: 1;
-  background: #353535; }
-  /* line 20, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_loader.scss */
+  background: #353535;
+  position: fixed; }
+  /* line 22, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_loader.scss */
   .loader-container .logo-loader {
     width: auto;
     height: 30px;
     margin-bottom: 20px; }
 
-/* line 27, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_loader.scss */
+/* line 29, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_loader.scss */
 .loader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 60px; }
-  /* line 36, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_loader.scss */
+  /* line 38, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_loader.scss */
   .loader__circle1 {
     width: 15px;
     height: 15px;
@@ -89,7 +90,7 @@ footer a:hover {
     animation-delay: 0.5s;
     border-radius: 50%;
     background: #9356DC; }
-  /* line 36, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_loader.scss */
+  /* line 38, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_loader.scss */
   .loader__circle2 {
     width: 15px;
     height: 15px;
@@ -97,7 +98,7 @@ footer a:hover {
     animation-delay: 1s;
     border-radius: 50%;
     background: #FF79DA; }
-  /* line 36, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_loader.scss */
+  /* line 38, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/components/_loader.scss */
   .loader__circle3 {
     width: 15px;
     height: 15px;
@@ -806,7 +807,7 @@ img {
   white-space: nowrap;
   text-overflow: ellipsis; }
 
-/* line 280, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
+/* line 279, /Volumes/HDD/FORMATIONS/Formation Openclassrooms/+ OC Web Dev 2020/Projets/P3/P3-OhMyFood/sass/pages/_menus.scss */
 .plat:hover .plat__prix {
   margin-right: 60px; }
 
