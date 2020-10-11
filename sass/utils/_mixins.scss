@@ -10,13 +10,13 @@
 @mixin shadow-button--hover {
     transform: scale(0.98);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.30);
+    background: linear-gradient(175deg, lighten($colour-secondary, 4%) 10%, lighten($colour-primary, 4%) 95%);
 }
 
 @mixin shadow-button--active {
     transform: scale(0.97);
     box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.30);
 }
-
 
 // NOTE:  Medias Queries
 @mixin mobile-only {
